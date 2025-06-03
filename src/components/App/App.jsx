@@ -1,6 +1,5 @@
 import css from './App.module.css';
 import ContactForm from '../ContactForm/ContactForm';
-import SearchBox from '../FilterContacts/FilterContacts';
 import ContactList from '../ContactList/ContactList';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
@@ -9,6 +8,7 @@ import Error from '../Error/Error';
 import Loader from '../Loader/Loader';
 import FilterContacts from '../FilterContacts/FilterContacts';
 import { selectError, selectLoading } from '../../redux/contactsSlice';
+import ResponsiveAppBar from '../Header/Header';
 
 export default function App() {
   const dispatch = useDispatch();
@@ -20,7 +20,7 @@ export default function App() {
 
   return (
     <div className={css.container}>
-      <h1>Phonebook</h1>
+      <ResponsiveAppBar />
       {error && <Error />}
       <ContactForm />
       {!loading && !error && <FilterContacts />}
