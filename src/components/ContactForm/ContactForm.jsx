@@ -4,7 +4,7 @@ import * as Yup from 'yup';
 import 'yup-phone-lite';
 import css from './ContactForm.module.css';
 import { useDispatch } from 'react-redux';
-import { addContact } from '../../redux/contactsOps';
+import { addContact } from '../../redux/contacts/operations';
 
 const OrderSchema = Yup.object().shape({
   username: Yup.string()
